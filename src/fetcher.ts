@@ -1,15 +1,17 @@
 import { PlunkError } from "./errors.js";
 
-const BASE_URL = "https://next-api.useplunk.com";
+const PUBLIC_API_URL = "https://next-api.useplunk.com";
+const DASHBOARD_URL = "https://next-app.useplunk.com";
 
 async function request<T>(
+  baseUrl: string,
   apiKey: string,
   method: string,
   path: string,
   body?: unknown,
   unwrap = true,
 ): Promise<T> {
-  const res = await fetch(`${BASE_URL}${path}`, {
+  const res = await fetch(`${baseUrl}${path}`, {
     method,
     headers: {
       Authorization: `Bearer ${apiKey}`,
@@ -35,13 +37,13 @@ async function request<T>(
 }
 
 export function plunkFetch<T>(apiKey: string, path: string, body: unknown): Promise<T> {
-  return request<T>(apiKey, "POST", path, body, true);
+  return request<T>(PUBLIC_API_URL, apiKey, "POST", path, body, true);
 }
 
 export function dashboardPost<T>(apiKey: string, path: string, body?: unknown): Promise<T> {
-  return request<T>(apiKey, "POST", path, body, false);
+  return request<T>(DASHBOARD_URL, apiKey, "POST", path, body, false);
 }
 
 export function dashboardGet<T>(apiKey: string, path: string): Promise<T> {
-  return request<T>(apiKey, "GET", path, undefined, false);
+  return request<T>(DASHBOARD_URL, apiKey, "GET", path, undefined, false);
 }

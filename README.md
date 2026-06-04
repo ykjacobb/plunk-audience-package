@@ -1,6 +1,6 @@
 # plunk-audience
 
-Audience management, marketing emails, and event tracking for [Plunk](https://useplunk.com). Zero dependencies, full TypeScript support, ESM + CJS.
+Audience management, marketing emails, and event tracking for [Plunk](https://next-app.useplunk.com). Zero dependencies, full TypeScript support, ESM + CJS.
 
 ## Installation
 
