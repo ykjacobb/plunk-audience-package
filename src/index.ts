@@ -1,5 +1,6 @@
 export { Plunk } from "./client.js";
 export { Audience } from "./audience.js";
+export { Campaigns } from "./campaigns.js";
 export { PlunkError } from "./errors.js";
 export type { PlunkErrorCode } from "./errors.js";
 export type {
@@ -10,11 +11,19 @@ export type {
   UnsubscribeOptions,
   TrackOptions,
   TrackResult,
+  EmailType,
   Recipient,
   Attachment,
   SendOptions,
+  SendMarketingOptions,
   SendResult,
   SentEmail,
   VerifyOptions,
   VerifyResult,
+  CampaignType,
+  CampaignAudienceType,
+  CampaignStatus,
+  CreateCampaignOptions,
+  Campaign,
+  CampaignStats,
 } from "./types.js";
